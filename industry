@@ -22,8 +22,8 @@ xkb_symbols "industry" {
     key <AE09> { [ underscore,      1               ] };
     key <AE10> { [ backslash,       3               ] };
     key <AE11> { [ braceright,      7               ] };
-    key <AE12> { [ numbersign,      less            ] };
-    key <BKSP> { [ at,              greater         ] };
+    key <AE12> { [ less,            numbersign      ] };
+    key <BKSP> { [ greater,         at              ] };
 
     // upper row, left side
     key <TAB>  { [ period,          exclam          ] };
@@ -61,7 +61,7 @@ xkb_symbols "industry" {
     key <RTRN> { [ equal,           colon           ] };
 
     // lower row, left side
-    key <LFSH> { [ bracketleft,     asciitilde      ] };
+    key <LFSH> { [ bracketleft,     grave           ] };
     key <AB01> { [ k,               K               ] };
     key <AB02> { [ b,               B               ] };
     key <AB03> { [ n,               N               ] };
@@ -74,5 +74,5 @@ xkb_symbols "industry" {
     key <AB08> { [ apostrophe,      quotedbl        ] };
     key <AB09> { [ j,               J               ] };
     key <AB10> { [ z,               Z               ] };
-    key <RTSH> { [ bracketright,    grave           ] };
+    key <RTSH> { [ bracketright,    asciitilde      ] };
 };
