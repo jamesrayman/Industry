@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -eu
+
+cd "$(dirname "$0")"
+xkb=/usr/share/X11/xkb
+grep -q 'industry' $xkb/symbols/us && exit
+
+cat industry >> $xkb/symbols/us
+
+nvim -Eu NONE $xkb/rules/base.lst -c '/us: English/a
+industry        us: English (Industry)' -cwq
+nvim -Eu NONE $xkb/rules/evdev.lst -c '/us: English/a
+industry        us: English (Industry)' -cwq
+
+nvim -Eu NONE $xkb/rules/base.xml -c '/English (Dvorak)//variant/a
+<variant>
+  <configItem>
+    <name>industry</name>
+    <description>English (Industry)</description>
+  </configItem>
+</variant>' -cwq
+nvim -Eu NONE $xkb/rules/evdev.xml -c '/English (Dvorak)//variant/a
+<variant>
+  <configItem>
+    <name>industry</name>
+    <description>English (Industry)</description>
+  </configItem>
+</variant>' -cwq
