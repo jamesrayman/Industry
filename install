@@ -8,22 +8,24 @@ grep -q 'industry' $xkb/symbols/us && exit
 
 cat industry >> $xkb/symbols/us
 
-nvim -Eu NONE $xkb/rules/base.lst -c '/us: English/a
+nvim -eu NONE $xkb/rules/base.lst -c '/us: English/a
 industry        us: English (Industry)' -cwq
-nvim -Eu NONE $xkb/rules/evdev.lst -c '/us: English/a
+nvim -eu NONE $xkb/rules/evdev.lst -c '/us: English/a
 industry        us: English (Industry)' -cwq
 
-nvim -Eu NONE $xkb/rules/base.xml -c '/English (Dvorak)//variant/a
+nvim -eu NONE $xkb/rules/base.xml -c '/English (Dvorak)//variant/a
 <variant>
   <configItem>
     <name>industry</name>
     <description>English (Industry)</description>
   </configItem>
 </variant>' -cwq
-nvim -Eu NONE $xkb/rules/evdev.xml -c '/English (Dvorak)//variant/a
+nvim -eu NONE $xkb/rules/evdev.xml -c '/English (Dvorak)//variant/a
 <variant>
   <configItem>
     <name>industry</name>
     <description>English (Industry)</description>
   </configItem>
 </variant>' -cwq
+
+localectl --no-convert set-x11-keymap us,us pc104 industry,

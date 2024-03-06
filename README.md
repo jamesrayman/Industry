@@ -19,3 +19,6 @@ This layout is still in beta and may change slightly in the future.
 `industry.map.gz` is a kernel keymap, loadable with `loadkeys`.
 
 `industry` is an X11 keymap.
+
+`install` is a shell script that installs `industry`. The last line in
+the script sets it as the default keyboard layout.
